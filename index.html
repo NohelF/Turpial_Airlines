@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turpial — Avior Virtual Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Turpial is Avior's official virtual assistant, helping you with aviation services, flight planning, charter flights, and more.">
+</head>
+<body>
+
+    <header style="background-color: #003366; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 1.5rem; font-weight: bold;">Avior Air</div>
+        <nav>
+            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Services</a>
+            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Charter</a>
+            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+
+    <main style="padding: 5% 5%; text-align: center; max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 3rem; color: #003366;">World-Class Aviation Support</h1>
+        <p style="font-size: 1.2rem; line-height: 1.6; color: #555;">Avior Air provides premium flight planning, international permits, ground handling, and logistics for corporate and private aviation operations worldwide.</p>
+        <div style="margin-top: 2rem;">
+            <button style="background-color: #f1c40f; color: #003366; border: none; padding: 15px 30px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1.1rem;">Request a Consultation</button>
+        </div>
+    </main>
+
+    <!-- Chat Trigger Button -->
+    <button id="turpial-chat-trigger" class="chat-trigger" title="Open Chat with Turpial">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+        </svg>
+    </button>
+
+    <!-- Chat Window Container -->
+    <div id="turpial-chat-window" class="chat-window hidden">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=turpial&backgroundColor=003366" alt="Turpial">
+                </div>
+                <div class="chat-title-container">
+                    <h1 id="chat-title">Turpial</h1>
+                    <span id="chat-subtitle">Avior Virtual Assistant</span>
+                </div>
+            </div>
+            <button id="chat-close" class="chat-close" title="Close Chat">&times;</button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chat-messages" class="chat-messages">
+            <!-- Messages will be injected here -->
+        </div>
+
+        <!-- Quick Suggestions -->
+        <div id="chat-suggestions" class="chat-suggestions">
+            <!-- Suggestion buttons will be injected here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+            <button id="chat-send" class="chat-send">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.493-7.493Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
