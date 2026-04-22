@@ -3,76 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turpial — Avior Virtual Assistant</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Turpial is Avior's official virtual assistant, helping you with aviation services, flight planning, charter flights, and more.">
+    <title>Turpial Airlines - e-Commerce y Soporte</title>
+
+    <!-- Estilos Originales (Chatbot) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Nuevos Estilos Turpial -->
+    <link rel="stylesheet" href="turpial.css">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header style="background-color: #003366; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-size: 1.5rem; font-weight: bold;">Avior Air</div>
-        <nav>
-            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Services</a>
-            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Charter</a>
-            <a href="#" style="color: white; margin-left: 20px; text-decoration: none;">Contact</a>
-        </nav>
-    </header>
-
-    <main style="padding: 5% 5%; text-align: center; max-width: 800px; margin: 0 auto;">
-        <h1 style="font-size: 3rem; color: #003366;">World-Class Aviation Support</h1>
-        <p style="font-size: 1.2rem; line-height: 1.6; color: #555;">Avior Air provides premium flight planning, international permits, ground handling, and logistics for corporate and private aviation operations worldwide.</p>
-        <div style="margin-top: 2rem;">
-            <button style="background-color: #f1c40f; color: #003366; border: none; padding: 15px 30px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1.1rem;">Request a Consultation</button>
-        </div>
-    </main>
-
-    <!-- Chat Trigger Button -->
-    <button id="turpial-chat-trigger" class="chat-trigger" title="Open Chat with Turpial">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
-        </svg>
-    </button>
-
-    <!-- Chat Window Container -->
-    <div id="turpial-chat-window" class="chat-window hidden">
-        <!-- Header -->
-        <div class="chat-header">
-            <div class="chat-header-info">
-                <div class="chat-avatar">
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=turpial&backgroundColor=003366" alt="Turpial">
+    <!-- Main Content Placeholder to simulate a real website -->
+    <div class="site-content">
+        <header class="turpial-header">
+            <nav class="turpial-nav">
+                <div class="logo">Turpial<span>Airlines</span> <i class="fa-solid fa-plane-departure" style="font-size:1.4rem; color:var(--turpial-yellow);"></i></div>
+                <div class="nav-actions">
+                    <button class="nav-btn" id="open-favorites-btn">
+                        <i class="fa-solid fa-heart"></i>
+                        <span id="fav-count" class="badge">0</span>
+                    </button>
+                    <button class="nav-btn" id="open-cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" class="badge">0</span>
+                    </button>
                 </div>
-                <div class="chat-title-container">
-                    <h1 id="chat-title">Turpial</h1>
-                    <span id="chat-subtitle">Avior Virtual Assistant</span>
+            </nav>
+        </header>
+
+        <!-- Nueva Sección Turpial -->
+        <section class="turpial-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Vuela con <span>Orgullo Venezolano</span></h1>
+                <p style="font-size: 1.25rem; margin-top: 10px; font-weight: 600;">Descubre el mundo con el mejor servicio y la calidez que nos caracteriza.</p>
+                <div class="venezuela-stars">
+                    <!-- 8 Estrellas de la Bandera -->
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
             </div>
-            <button id="chat-close" class="chat-close" title="Close Chat">&times;</button>
-        </div>
+        </section>
 
-        <!-- Messages Area -->
-        <div id="chat-messages" class="chat-messages">
-            <!-- Messages will be injected here -->
-        </div>
+        <!-- Lista de Vuelos Dinámica -->
+        <main>
+            <div class="section-title">
+                <h2>Vuelos Destacados</h2>
+                <p>Encuentra tu próximo destino al mejor precio garantizado.</p>
+            </div>
+            
+            <div id="flights-container" class="flights-grid">
+                <!-- Los vuelos serán inyectados por turpial.js -->
+            </div>
+        </main>
+    </div>
 
-        <!-- Quick Suggestions -->
-        <div id="chat-suggestions" class="chat-suggestions">
-            <!-- Suggestion buttons will be injected here -->
+    <!-- Modales y Elementos Flotantes -->
+    <!-- Sidebar del Carrito -->
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Tu Carrito</h2>
+            <button class="close-sidebar" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
         </div>
+        <div class="sidebar-content" id="cart-items">
+            <!-- Items inyectados via JS -->
+        </div>
+        <div class="sidebar-footer">
+            <div class="cart-total">Total: <span id="cart-total-price">$0</span></div>
+            <div class="cart-actions">
+                <button class="btn btn-outline" id="empty-cart-btn">Vaciar Carrito</button>
+                <button class="btn btn-primary" id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
 
-        <!-- Input Area -->
-        <div class="chat-footer">
-            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
-            <button id="chat-send" class="chat-send">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.493-7.493Z"/>
-                </svg>
-            </button>
+    <!-- Sidebar de Favoritos -->
+    <div id="favorites-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fa-solid fa-heart"></i> Guardados</h2>
+            <button class="close-sidebar" id="close-favorites-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content" id="favorites-items">
+            <!-- Items inyectados via JS -->
+        </div>
+    </div>
+
+    <!-- Overlay oscuro para sidebars -->
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <!-- Chat Toggle Button -->
+        <button id="chat-toggle" class="chat-toggle" aria-label="Open support chat">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5-1.338c1.47.851 3.179 1.338 5 1.338 5.523 0 10-4.477 10-10S17.523 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+            </svg>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window hidden">
+            <div class="chat-header">
+                <div class="header-info">
+                    <img src="https://ui-avatars.com/api/?name=Avior+Support&background=D71920&color=fff&bold=true" alt="Avatar" class="bot-avatar">
+                    <div class="bot-details">
+                        <span class="bot-name">Avior Assistant</span>
+                        <span class="bot-status">Online</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be injected here -->
+            </div>
+
+            <div id="typing-indicator" class="typing-indicator hidden">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="chat-suggestions" id="chat-suggestions">
+                <!-- Suggestions will be injected here -->
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                <button id="send-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="turpial.js"></script>
 </body>
 </html>
